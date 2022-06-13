@@ -46,7 +46,7 @@ if(!empty($SurfaceArea_min) && !empty($SurfaceArea_max)){
   $wheres[] = "SurfaceArea BETWEEN {$SurfaceArea_min} AND {$SurfaceArea_max}";
 }else if(!empty($SurfaceArea_min)){
     $wheres[] = "SurfaceArea >= {$SurfaceArea_min}";
-}else if(!empty($indepyear_max)){
+}else if(!empty($SurfaceArea_max)){
     $wheres[] = "SurfaceArea <= {$SurfaceArea_max}";
 }
     
@@ -108,9 +108,9 @@ mysqli_close($link);
             <label for="indepyear" class="col-sm-2 col-form-label">indepyear</label>
             <div class="col-sm-10">
               <div class="input-group">
-                <input type="number" class="form-control" id="indepyear_min"  value="<?php echo $indepyear_min; ?>">
+                <input type="number" class="form-control" id="indepyear_min" name="indepyear_min" value="<?php echo $indepyear_min; ?>">
                 <div class="input-group-text">~</div>
-                <input type="number" class="form-control" id="indepyear_max"  value="<?php echo $indepyear_max; ?>">
+                <input type="number" class="form-control" id="indepyear_max" name="indepyear_max" value="<?php echo $indepyear_max; ?>">
               </div>
             </div>
           </div>
@@ -118,9 +118,9 @@ mysqli_close($link);
             <label for="SurfaceArea" class="col-sm-2 col-form-label">SurfaceArea</label>
               <div class="col-sm-10">
                 <div class="input-group">
-                <input type="number" step=0.01 class="form-control" id="surfaceArea_min" name="surfaceArea_min" value="<?php echo $SurfaceArea_min; ?>">
+                <input type="number" step=0.01 class="form-control" id="SurfaceArea_min" name="SurfaceArea_min" value="<?php echo $SurfaceArea_min; ?>">
                 <div class="input-group-text">~</div>
-                <input type="number" step=0.01 class="form-control" id="surfaceArea_max" name="surfaceArea_max " value="<?php echo $SurfaceArea_max; ?>">
+                <input type="number" step=0.01 class="form-control" id="SurfaceArea_max" name="SurfaceArea_max" value="<?php echo $SurfaceArea_max; ?>">
               </div>
             </div>
           </div>  
